@@ -17,9 +17,11 @@ import java.io.IOException;
 public class WebServer {
 
     public WebServer() throws Exception {
-        Server server = new Server(8080);
+        //Server server = new Server(Integer.valueOf(System.getenv("PORT")));
 
-        ServletHandler handler = new ServletHandler();
+    	Server server = new Server();
+
+    	ServletHandler handler = new ServletHandler();
         handler.addServletWithMapping(new ServletHolder(new Website()), "/*");
         handler.addServletWithMapping(new ServletHolder(new Api()), "/api/*");
         server.setHandler(handler);
