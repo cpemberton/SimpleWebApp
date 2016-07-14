@@ -30,13 +30,13 @@ public class QueryProcessor {
     			if (isNumeric(query.split(" ")[i])) {
     				max = (Double.parseDouble(query.split(" ")[i]) > max)? Double.parseDouble(query.split(" ")[i]): max; 
     			}
-    		}
+    		}	
     		return Double.toString(max); 
     	}
     		
     	
     	// square and a cube 
-    	if (query.contains("which") && query.contains("largest")  ) {
+    	if (query.contains("which") && query.contains("square")  ) {
     		double res = 0; 
     		for (int i = 0; i<query.split(" ").length; i++) {
     			if (isNumeric(query.split(" ")[i])) {
